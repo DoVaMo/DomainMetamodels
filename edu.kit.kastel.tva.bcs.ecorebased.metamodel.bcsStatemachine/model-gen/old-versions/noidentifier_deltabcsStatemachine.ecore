@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="deltabcsStatemachine" nsURI="https://tva.kastel.kit.edu/bcs/ecorebased/metamodels/deltabcsStatemachine"
+    nsPrefix="deltabcsStatemachine">
+  <eClassifiers xsi:type="ecore:EClass" name="DeltaBcsStatemachine" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEDeltaDialect"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DetachTransitionFromTransitionsInRegion"
+      eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DetachStateFromStatesInRegion" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DetachRegionFromSubRegionInState" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DetachTriggerFromTriggerInTransition"
+      eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="triggerId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DetachBehaviorFromEffectInTransition"
+      eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviorId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DetachConstraintFromGuardInTransition"
+      eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DetachRegionFromRegionsInStateMachine"
+      eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statemachineIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DetachCommunicationSignalFromSignalsInStateMachine"
+      eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationsignalId"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statemachineIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddToTransitionsInRegion" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEAddDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddToStatesInRegion" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEAddDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddToSubRegionInState" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEAddDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//Region"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddToRegionsInStateMachine" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEAddDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//Region"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statemachineIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddToSignalsInStateMachine" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEAddDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//CommunicationSignal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statemachineIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationsignalId"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveFromTransitionsInRegion" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DERemoveDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveFromStatesInRegion" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DERemoveDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveFromSubRegionInState" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DERemoveDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//Region"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveFromRegionsInStateMachine" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DERemoveDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//Region"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statemachineIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveFromSignalsInStateMachine" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DERemoveDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//CommunicationSignal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statemachineIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationsignalId"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InsertIntoTransitionsInRegion" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEInsertDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InsertIntoStatesInRegion" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEInsertDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InsertIntoSubRegionInState" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEInsertDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//Region"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InsertIntoRegionsInStateMachine" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEInsertDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//Region"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statemachineIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InsertIntoSignalsInStateMachine" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEInsertDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//CommunicationSignal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statemachineIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationsignalId"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetTriggerInTransition" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DESetDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//Trigger"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="triggerId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetEffectInTransition" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DESetDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//Behavior"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviorId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetGuardInTransition" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DESetDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//Constraint"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetTargetStateInTransition" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DESetDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetSourceStateInTransition" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DESetDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetReceivedSignalInTrigger" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DESetDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//CommunicationSignal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="triggerIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationsignalId"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetSentSignalInBehavior" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DESetDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" lowerBound="1"
+        eType="ecore:EClass ../model/bcsStatemachine.ecore#//CommunicationSignal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviorIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationsignalId"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnsetTriggerInTransition" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEUnsetDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="triggerId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnsetEffectInTransition" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEUnsetDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviorId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnsetGuardInTransition" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEUnsetDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnsetTargetStateInTransition" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEUnsetDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnsetSourceStateInTransition" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEUnsetDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnsetReceivedSignalInTrigger" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEUnsetDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="triggerIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationsignalId"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnsetSentSignalInBehavior" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEUnsetDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviorIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationsignalId"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeNameInRegion" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeIdInRegion" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeNameInState" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeIdInState" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeIsInitialInState" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeIsFinalInState" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeNameInTransition" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeIdInTransition" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeEventInTrigger" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="triggerIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeNameInTrigger" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="triggerIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeIdInTrigger" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="triggerIdOfContainer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeConstraintInConstraint"
+      eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeNameInConstraint" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeIdInConstraint" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeActionInBehavior" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviorIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeNameInBehavior" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviorIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeIdInBehavior" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviorIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeNameInCommunicationSignal"
+      eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationsignalIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeIdInCommunicationSignal"
+      eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationsignalIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeNameInStateMachine" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statemachineIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttributeIdInStateMachine" eSuperTypes="../../edu.kit.kastel.tva.deltavar.core.deltametamodel/model/genericdelta.ecore#//DEModifyDeltaOperationDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statemachineIdOfContainer"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsStatemachine/src-gen"
+    creationIcons="false" editDirectory="/edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsStatemachine.edit/src-gen"
+    editorDirectory="/edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsStatemachine.editor/src-gen"
+    modelPluginID="edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsStatemachine" modelName="BcsStatemachine"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    testsDirectory="/edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsStatemachine.tests/src"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>bcsStatemachine.ecore</foreignModel>
+  <genPackages prefix="BcsStatemachine" basePackage="edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsStatemachine"
+      disposableProviderFactory="true" ecorePackage="bcsStatemachine.ecore#/">
+    <genClasses ecoreClass="bcsStatemachine.ecore#//Region">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bcsStatemachine.ecore#//Region/transitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bcsStatemachine.ecore#//Region/states"/>
+    </genClasses>
+    <genClasses ecoreClass="bcsStatemachine.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bcsStatemachine.ecore#//State/isInitial"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bcsStatemachine.ecore#//State/isFinal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bcsStatemachine.ecore#//State/subRegion"/>
+    </genClasses>
+    <genClasses ecoreClass="bcsStatemachine.ecore#//Transition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bcsStatemachine.ecore#//Transition/trigger"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bcsStatemachine.ecore#//Transition/effect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bcsStatemachine.ecore#//Transition/guard"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bcsStatemachine.ecore#//Transition/targetState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bcsStatemachine.ecore#//Transition/sourceState"/>
+    </genClasses>
+    <genClasses ecoreClass="bcsStatemachine.ecore#//Trigger">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bcsStatemachine.ecore#//Trigger/receivedSignal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bcsStatemachine.ecore#//Trigger/event"/>
+    </genClasses>
+    <genClasses ecoreClass="bcsStatemachine.ecore#//Constraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bcsStatemachine.ecore#//Constraint/constraint"/>
+    </genClasses>
+    <genClasses ecoreClass="bcsStatemachine.ecore#//Behavior">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bcsStatemachine.ecore#//Behavior/sentSignal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bcsStatemachine.ecore#//Behavior/action"/>
+    </genClasses>
+    <genClasses ecoreClass="bcsStatemachine.ecore#//CommunicationSignal"/>
+    <genClasses ecoreClass="bcsStatemachine.ecore#//StateMachine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bcsStatemachine.ecore#//StateMachine/regions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bcsStatemachine.ecore#//StateMachine/signals"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="bcsStatemachine.ecore#//Identifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bcsStatemachine.ecore#//Identifier/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bcsStatemachine.ecore#//Identifier/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

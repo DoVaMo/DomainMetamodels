@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bcsComponent" nsURI="https://tva.kastel.kit.edu/bcs/ecorebased/metamodel/bcsComponent"
+    nsPrefix="bcsComponent">
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Identifier">
+    <eOperations name="isSubcomponent" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return this.getParentComponent() != null;"/>
+        <details key="documentation" value="Returns &quot;this.getParentComponent()  != null&quot;"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputPorts" upperBound="-1"
+        eType="#//Port" containment="true" eOpposite="#//Port/portComponentIn"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputPorts" upperBound="-1"
+        eType="#//Port" containment="true" eOpposite="#//Port/portComponentOut"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" upperBound="-1"
+        eType="#//Component" containment="true" eOpposite="#//Component/parentComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponent" eType="#//Component"
+        eOpposite="#//Component/subcomponents"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portComponentIn" ordered="false"
+        unique="false" eType="#//Component" changeable="false" eOpposite="#//Component/inputPorts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portComponentOut" eType="#//Component"
+        eOpposite="#//Component/outputPorts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signal" lowerBound="1"
+        eType="#//Signal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connector" eSuperTypes="#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePort" ordered="false"
+        unique="false" lowerBound="1" eType="#//Port" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPort" ordered="false"
+        unique="false" lowerBound="1" eType="#//Port" unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
+        eType="#//Connector" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signals" upperBound="-1"
+        eType="#//Signal" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Signal" eSuperTypes="#//Identifier">
+    <eOperations name="getInputPortsUsingSignal" upperBound="-1" eType="#//Port"/>
+    <eOperations name="getOutputPortsUsingSignal" upperBound="-1" eType="#//Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Identifier" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+</ecore:EPackage>

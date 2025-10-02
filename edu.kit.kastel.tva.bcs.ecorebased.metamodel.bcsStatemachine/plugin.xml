@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated bcsStatemachine -->
+      <package
+            uri="https://tva.kastel.kit.edu/bcs/ecorebased/metamodel/bcsStatemachine"
+            class="edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsStatemachine.bcsStatemachine.BcsStatemachinePackage"
+            genModel="model/bcsStatemachine.genmodel"/>
+   </extension>
+
+</plugin>

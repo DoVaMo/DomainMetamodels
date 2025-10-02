@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent/src-gen"
+    creationIcons="false" editDirectory="/edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.edit/src-gen"
+    editorDirectory="/edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.editor/src-gen"
+    modelPluginID="edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent" modelName="BcsComponent"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    testsDirectory="/edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.tests/src-gen"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0" copyrightFields="false"
+    importOrganizing="true">
+  <foreignModel>bcsComponent.ecore</foreignModel>
+  <genPackages prefix="BcsComponent" basePackage="edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent"
+      disposableProviderFactory="true" ecorePackage="bcsComponent.ecore#/">
+    <genClasses ecoreClass="bcsComponent.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bcsComponent.ecore#//Component/inputPorts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bcsComponent.ecore#//Component/outputPorts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bcsComponent.ecore#//Component/subcomponents"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bcsComponent.ecore#//Component/parentComponent"/>
+      <genOperations ecoreOperation="bcsComponent.ecore#//Component/isSubcomponent"
+          body="return this.getParentComponent() != null;"/>
+    </genClasses>
+    <genClasses ecoreClass="bcsComponent.ecore#//Port">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bcsComponent.ecore#//Port/portComponentIn"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bcsComponent.ecore#//Port/portComponentOut"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bcsComponent.ecore#//Port/signal"/>
+    </genClasses>
+    <genClasses ecoreClass="bcsComponent.ecore#//Connector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bcsComponent.ecore#//Connector/sourcePort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bcsComponent.ecore#//Connector/targetPort"/>
+    </genClasses>
+    <genClasses ecoreClass="bcsComponent.ecore#//System">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bcsComponent.ecore#//System/components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bcsComponent.ecore#//System/connectors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bcsComponent.ecore#//System/signals"/>
+    </genClasses>
+    <genClasses ecoreClass="bcsComponent.ecore#//Signal">
+      <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="import" value="edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.bcsComponent.Component"/>
+        <details key="import" value="edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.bcsComponent.System"/>
+      </genAnnotations>
+      <genOperations documentation="This method traverses through the root {@link component.System} and its components, &#xD;&#xA;recursively collecting all &lt;strong>input&lt;/strong> {@link Port} instances that are using the current signal.&#xD;&#xA;A {@link Port} is considered to be using the signal if its signal reference matches &#xD;&#xA;the current signal. The method starts from the root system, checks each component &#xD;&#xA;and its subcomponents, and identifies which &lt;strong>input&lt;/strong> ports are using the signal.&#xD;&#xA;&#xD;&#xA;The method throws an {@link IllegalStateException} if the signal is not contained in &#xD;&#xA;any element, or if the signal is not directly contained within a {@link component.System}.&#xD;&#xA;&#xD;&#xA;Note: This method assumes that the system and components are properly set up in the &#xD;&#xA;model, and that the signal is correctly linked to the ports."
+          ecoreOperation="bcsComponent.ecore#//Signal/getInputPortsUsingSignal" body="if (this.eContainer() == null) {&#xD;&#xA;&#x9;throw new IllegalStateException(&quot;Signal is not contained in any element.&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;if (!(this.eContainer() instanceof &lt;%edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.bcsComponent.System%>)) {&#xD;&#xA;&#x9;throw new IllegalStateException(&quot;Signal must be directly contained within a System.&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&lt;%edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.bcsComponent.System%> rootSystem = (&lt;%edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.bcsComponent.System%>) this.eContainer();&#xD;&#xA;&#xD;&#xA;// Collecting ports&#xD;&#xA;EList&lt;Port> usingPorts = new org.eclipse.emf.common.util.BasicEList&lt;Port>();&#xD;&#xA;&#xD;&#xA;EList&lt;&lt;%edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.bcsComponent.Component%>> componentsToCheck = new org.eclipse.emf.common.util.BasicEList&lt;&lt;%edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.bcsComponent.Component%>>();&#xD;&#xA;componentsToCheck.addAll(rootSystem.getComponents());&#xD;&#xA;&#xD;&#xA;while (!componentsToCheck.isEmpty()) {&#xD;&#xA;&#x9;&lt;%edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.bcsComponent.Component%> component = componentsToCheck.remove(0);&#xD;&#xA;&#xD;&#xA;&#x9;for (Port port : component.getInputPorts()) {&#xD;&#xA;&#x9;&#x9;if (this.equals(port.getSignal())) {&#xD;&#xA;&#x9;&#x9;&#x9;usingPorts.add(port);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;componentsToCheck.addAll(component.getSubcomponents());&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return usingPorts;"/>
+      <genOperations documentation="This method traverses through the root {@link component.System} and its components, &#xD;&#xA;recursively collecting all &lt;strong>output&lt;/strong> {@link Port} instances that are using the current signal.&#xD;&#xA;A {@link Port} is considered to be using the signal if its signal reference matches &#xD;&#xA;the current signal. The method starts from the root system, checks each component &#xD;&#xA;and its subcomponents, and identifies which &lt;strong>output&lt;/strong> ports are using the signal.&#xD;&#xA;&#xD;&#xA;The method throws an {@link IllegalStateException} if the signal is not contained in &#xD;&#xA;any element, or if the signal is not directly contained within a {@link component.System}.&#xD;&#xA;&#xD;&#xA;Note: This method assumes that the system and components are properly set up in the &#xD;&#xA;model, and that the signal is correctly linked to the ports."
+          ecoreOperation="bcsComponent.ecore#//Signal/getOutputPortsUsingSignal" body="if (this.eContainer() == null) {&#xD;&#xA;&#x9;throw new IllegalStateException(&quot;Signal is not contained in any element.&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;if (!(this.eContainer() instanceof &lt;%edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.bcsComponent.System%>)) {&#xD;&#xA;&#x9;throw new IllegalStateException(&quot;Signal must be directly contained within a System.&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&lt;%edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.bcsComponent.System%> rootSystem = (&lt;%edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.bcsComponent.System%>) this.eContainer();&#xD;&#xA;&#xD;&#xA;// Collecting ports&#xD;&#xA;EList&lt;Port> usingPorts = new org.eclipse.emf.common.util.BasicEList&lt;Port>();&#xD;&#xA;&#xD;&#xA;EList&lt;&lt;%edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.bcsComponent.Component%>> componentsToCheck = new org.eclipse.emf.common.util.BasicEList&lt;&lt;%edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.bcsComponent.Component%>>();&#xD;&#xA;componentsToCheck.addAll(rootSystem.getComponents());&#xD;&#xA;&#xD;&#xA;while (!componentsToCheck.isEmpty()) {&#xD;&#xA;&#x9;&lt;%edu.kit.kastel.tva.bcs.ecorebased.metamodel.bcsComponent.bcsComponent.Component%> component = componentsToCheck.remove(0);&#xD;&#xA;&#xD;&#xA;&#x9;for (Port port : component.getOutputPorts()) {&#xD;&#xA;&#x9;&#x9;if (this.equals(port.getSignal())) {&#xD;&#xA;&#x9;&#x9;&#x9;usingPorts.add(port);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;componentsToCheck.addAll(component.getSubcomponents());&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return usingPorts;"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="bcsComponent.ecore#//Identifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bcsComponent.ecore#//Identifier/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bcsComponent.ecore#//Identifier/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

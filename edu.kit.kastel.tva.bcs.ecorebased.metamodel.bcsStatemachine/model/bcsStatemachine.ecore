@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bcsStatemachine" nsURI="https://tva.kastel.kit.edu/bcs/ecorebased/metamodel/bcsStatemachine"
+    nsPrefix="bcsStatemachine">
+  <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
+        eType="#//Transition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+        eType="#//State" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInitial" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFinal" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subRegion" upperBound="-1"
+        eType="#//Region" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" ordered="false"
+        unique="false" eType="#//Trigger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="effect" ordered="false"
+        unique="false" eType="#//Behavior" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" ordered="false"
+        unique="false" eType="#//Constraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetState" ordered="false"
+        unique="false" lowerBound="1" eType="#//State" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceState" ordered="false"
+        unique="false" lowerBound="1" eType="#//State" unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trigger" eSuperTypes="#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receivedSignal" ordered="false"
+        unique="false" upperBound="-1" eType="#//CommunicationSignal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="event" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint" eSuperTypes="#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Behavior" eSuperTypes="#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sentSignal" ordered="false"
+        unique="false" upperBound="-1" eType="#//CommunicationSignal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationSignal" eSuperTypes="#//Identifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StateMachine" eSuperTypes="#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1"
+        eType="#//Region" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signals" upperBound="-1"
+        eType="#//CommunicationSignal" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Identifier" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+</ecore:EPackage>
